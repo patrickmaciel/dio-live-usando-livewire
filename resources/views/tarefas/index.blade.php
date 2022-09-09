@@ -1,11 +1,14 @@
-<h1>Tarefas</h1>
+@extends('layouts.default')
 
-<form action="{{ route('tarefas.index') }}" method="GET">
-    <input type="text" name="busca" placeholder="Buscar tarefa" />
-</form>
+@section('content')
+    <h1>Tarefas</h1>
 
-<table>
-    <thead>
+    <form action="{{ route('tarefas.index') }}" method="GET">
+        <input type="text" name="busca" placeholder="Buscar tarefa" />
+    </form>
+
+    <table>
+        <thead>
         <tr>
             <th>Id</th>
             <th>Categoria</th>
@@ -13,9 +16,9 @@
             <th>Concluida</th>
             <th>Ações</th>
         </tr>
-    </thead>
+        </thead>
 
-    <tbody>
+        <tbody>
         @foreach ($tarefas as $tarefa)
             <tr>
                 <td>{{ $tarefa->id }}</td>
@@ -28,5 +31,6 @@
                 </td>
             </tr>
         @endforeach
-    </tbody>
-</table>
+        </tbody>
+    </table>
+@endsection

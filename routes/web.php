@@ -18,3 +18,5 @@ Route::get('/', function () {
 });
 
 Route::get('tarefas', [\App\Http\Controllers\TarefasController::class, 'index'])->name('tarefas.index');
+
+Route::get('tarefas-livewire', \App\Http\Livewire\Pages\Tarefas::class)->name('tarefas-livewire.index');
